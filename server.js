@@ -1,12 +1,17 @@
 const express=require('express');
 const app=express();
 const path=require('path');
+const cors=require('cors');
 
 
 const PORT=process.env.PORT || 3000;
+const corsOption={
+    origin:process.env.ALLOWED_CLIENTS.split(',')
+}
 //Middlewears
 app.use(express.static("public"));
 app.use(express.json());
+app.use(cors(corsOption));
 
 
 const connectDB=require("./config/db");
