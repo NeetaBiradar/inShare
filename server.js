@@ -2,11 +2,12 @@ const express=require('express');
 const app=express();
 const path=require('path');
 const cors=require('cors');
+require('dotenv').config();
 
 
 const PORT=process.env.PORT || 3000;
 const corsOption={
-    origin:process.env.ALLOWED_CLIENTS.split(',')
+    origin: process.env.ALLOWED_CLIENTS.split(",")
 }
 //Middlewears
 app.use(express.static("public"));
