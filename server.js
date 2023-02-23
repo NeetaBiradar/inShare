@@ -6,13 +6,13 @@ require('dotenv').config();
 
 
 const PORT=process.env.PORT || 3000;
-const corsOption={
+/*const corsOption={
     origin: process.env.ALLOWED_CLIENTS.split(',')
-}
+}*/
 //Middlewears
 app.use(express.static("public"));
 app.use(express.json());
-app.use(cors(corsOption));
+app.use(cors());
 
 
 const connectDB=require("./config/db");
